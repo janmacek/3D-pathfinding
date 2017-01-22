@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://3D-pathfinding.org/map" elementFormDefault="qualified" targetNamespace="http://3D-pathfinding.org/map" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Map">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Floors" />
+        <xs:element ref="Start" />
+        <xs:element ref="Final" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Floors">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="Floor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Start">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="X" />
+        <xs:element ref="Y" />
+        <xs:element ref="Z" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Final">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="X" />
+        <xs:element ref="Y" />
+        <xs:element ref="Z" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Floor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Rooms" />
+        <xs:element ref="FloorNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rooms">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="Room" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FloorNumber">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string" />
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Room">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Corners" />
+        <xs:element ref="Barriers" />
+        <xs:element ref="Transits" />
+        <xs:element ref="Name" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Barriers">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ObjectOfBuilding" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Transits">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Transit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Name">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string" />
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObjectOfBuilding">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Corners" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Transit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Corners" />
+        <xs:element ref="Delay" />
+        <xs:element ref="Id" />
+        <xs:element ref="Type" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delay">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string" />
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Id">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string" />
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Type">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="Corners">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="MapPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MapPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="X" />
+        <xs:element ref="Y" />
+        <xs:element ref="Z" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="X">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string" />
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Y">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string" />
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Z">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string" />
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

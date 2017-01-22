@@ -90,7 +90,7 @@ namespace PathfindingApp {
                             recentFileList.InsertFile(System.IO.Path.GetFullPath(fileName));
                             mainWindow.lblStatusBox.Visibility = Visibility.Visible;
                         } else {
-                            MessageBox.Show(string.Concat("Unfortunately, file \"", fileName.Replace(".3Dpathfinding.xml", ""), ".3Dpathfinding.xml\" ", " is not valid ! There is error: ", loadResult), "Load file error!");
+                            MessageBox.Show(string.Concat("Unfortunately, file \"", fileName.Replace(".map.xml", ""), ".map.xml\" ", " is not valid ! There is error: ", loadResult), "Load file error!");
                         }
                     }
                 } else {
@@ -112,12 +112,12 @@ namespace PathfindingApp {
                         recentFileList.InsertFile(System.IO.Path.GetFullPath(fileName));
                         mainWindow.lblStatusBox.Visibility = Visibility.Visible;
                     } else {
-                        MessageBox.Show(string.Concat("Unfortunately, file \"", fileName.Replace(".3Dpathfinding.xml", ""), ".3Dpathfinding.xml\" ", " is not valid ! There is error: ", loadResult), "Load file error!");
+                        MessageBox.Show(string.Concat("Unfortunately, file \"", fileName.Replace(".map.xml", ""), ".map.xml\" ", " is not valid ! There is error: ", loadResult), "Load file error!");
                         return map;
                     }
                 }
             } else {
-                MessageBox.Show(string.Concat("Unfortunately, file \"", fileName.Replace(".3Dpathfinding.xml", ""), ".3Dpathfinding.xml\" ", " not exists !"), "Load file error!");
+                MessageBox.Show(string.Concat("Unfortunately, file \"", fileName.Replace(".map.xml", ""), ".map.xml\" ", " not exists !"), "Load file error!");
                 RecentFileList recentFileList = new RecentFileList();
                 recentFileList.RemoveFile(System.IO.Path.GetFullPath(fileName));
             }
