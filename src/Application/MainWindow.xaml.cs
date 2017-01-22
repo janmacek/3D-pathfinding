@@ -113,7 +113,7 @@ namespace PathfindingApp
                 this.mainWindow.MinHeight = 200;
                 this.mainWindow.MinWidth = 160 * max;
                 for (int i = 0; i < max; i++) {
-                    (WrpBtnXmlFiles.Children[i] as Button).Content = filePaths[i].ToString().Split('\\')[filePaths[i].ToString().Split('\\').Length - 1].Replace(".3Dpathfinding.xml", "");
+                    (WrpBtnXmlFiles.Children[i] as Button).Content = filePaths[i].ToString().Split('\\')[filePaths[i].ToString().Split('\\').Length - 1].Replace(".map.xml", "");
                     (WrpBtnXmlFiles.Children[i] as Button).Visibility = Visibility.Visible;
                     (WrpBtnXmlFiles.Children[i] as Button).Width = 100;
                     (WrpBtnXmlFiles.Children[i] as Button).Margin = new Thickness(20);
@@ -128,7 +128,7 @@ namespace PathfindingApp
         /// </summary>
         private void FileButtonClick(object sender, RoutedEventArgs e) {
             foreach (string file in RecentFileList.RecentFiles) {
-                if ((sender as Button).Content.ToString().Equals(file.ToString().Split('\\')[file.ToString().Split('\\').Length - 1].Replace(".3Dpathfinding.xml", ""))) {
+                if ((sender as Button).Content.ToString().Equals(file.ToString().Split('\\')[file.ToString().Split('\\').Length - 1].Replace(".map.xml", ""))) {
                     GuiHelpClass.LoadMap(file.ToString(), (this.map.Floors.Count != 0), this.map, mainWindow, tabs, topMenu, WrpBtnXmlFiles, this.activeAlgorithm);
                     break;
                 }
@@ -182,7 +182,7 @@ namespace PathfindingApp
             Microsoft.Win32.OpenFileDialog loadFileDialog = new Microsoft.Win32.OpenFileDialog();
             //nastavi filter 
             loadFileDialog.DefaultExt = ".txt";
-            loadFileDialog.Filter = "XML Files|*.3Dpathfinding.xml";
+            loadFileDialog.Filter = "XML Files|*.map.xml";
             loadFileDialog.InitialDirectory = System.IO.Path.GetFullPath(@"../../../Saved/"); 
             Nullable<bool> result = loadFileDialog.ShowDialog();
             //ak bol vybraty subor, nacita ho
@@ -199,7 +199,7 @@ namespace PathfindingApp
             //dialog vyberu miesta ulozenia suboru
             Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
             //nastavenie vlastnosti dialogu
-            saveFileDialog.Filter = "XML Files|*.3Dpathfinding.xml";
+            saveFileDialog.Filter = "XML Files|*.map.xml";
             saveFileDialog.FilterIndex = 2;
             saveFileDialog.InitialDirectory = System.IO.Path.GetFullPath(@"../../../Saved/");
             saveFileDialog.RestoreDirectory = true;
