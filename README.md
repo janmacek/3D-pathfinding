@@ -1,6 +1,6 @@
 ## About
 
-This project implements pathfinding algorithm for pseudo-3D ( 3D space is preprocessed to 2D space ) state space. 
+This project implements pathfinding algorithm for pseudo-3D space ( 3D space is preprocessed to 2D space ). 
 
 ## Example
 
